@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 class Employee(db.Model):
-    __tablename__ = 'employee_01'
+    __tablename__ = 'employee'
     id = db.Column(db.Integer, primary_key=True)  # システムで使う番号
     name = db.Column(db.String(255))  # 工事名
     cord  = db.Column(db.Integer,default=0)  # 工事コード
