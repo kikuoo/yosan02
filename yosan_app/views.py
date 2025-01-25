@@ -22,6 +22,7 @@ def add_employee():
         db.session.add(employee)
         db.session.commit()
         return redirect("/employees")
+    
 
 
 @app.route('/employees')
