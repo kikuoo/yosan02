@@ -21,7 +21,7 @@ def add_employee():
             jikko=form_jikko)
         db.session.add(employee)
         db.session.commit()
-        return redirect("/")
+        return redirect("/employees")
 
 
 @app.route('/employees')
