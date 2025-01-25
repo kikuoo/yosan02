@@ -9,21 +9,19 @@ def add_employee():
         return render_template('yosan_app/add_employee.html')
     if request.method == 'POST':
         form_name = request.form.get('name')
-        form_mail = request.form.get('mail')
-        form_is_remote = request.form.get('is_remote', default=False, type=bool)
-        form_department = request.form.get('department')
-        form_year = request.form.get('year', default=0, type=int)
+        form_cord = request.form.get('cord')
+        # form_is_remote = request.form.get('is_remote', default=False, type=bool)
+        form_ukeoi = request.form.get('ukeoi',default=0, type=int)
+        form_jikko = request.form.get('jikko', default=0, type=int)
 
         employee = Employee(
             name=form_name,
-            mail=form_mail,
-            is_remote=form_is_remote,
-            department=form_department,
-            year=form_year
-        )
+            cord=form_cord,
+            ukeoi=form_ukeoi,
+            jikko=form_jikko)
         db.session.add(employee)
         db.session.commit()
-        return redirect(url_for('employee_list'))
+        return redirect("/employees")
 
 
 @app.route('/employees')
